@@ -1,0 +1,60 @@
+/* v15 — calendar-only fit fix.
+   Purpose: keep the full daily PnL visible on narrow iPhones without touching
+   statistics, trade details, backup logic, colors, or the v13 visual design. */
+
+@media (max-width:520px){
+  body:has(.calendarPanel) .calendarPanel{
+    margin-left:-3px;
+    margin-right:-3px;
+    padding-left:10px;
+    padding-right:10px;
+  }
+
+  body:has(.calendarPanel) .week,
+  body:has(.calendarPanel) .cal{
+    gap:4px;
+  }
+
+  body:has(.calendarPanel) .day{
+    padding-left:3px;
+    padding-right:3px;
+  }
+
+  body:has(.calendarPanel) .day .pnl{
+    width:calc(100% + 4px);
+    margin-left:-2px;
+    margin-right:-2px;
+    font-size:clamp(8.4px,2.35vw,9.6px);
+    line-height:1.02;
+    letter-spacing:-.055em;
+    font-variant-numeric:tabular-nums;
+    white-space:nowrap;
+    overflow:visible;
+    text-overflow:clip;
+    transform:scaleX(.94);
+    transform-origin:center;
+  }
+}
+
+@media (max-width:390px){
+  body:has(.calendarPanel) .calendarPanel{
+    margin-left:-4px;
+    margin-right:-4px;
+    padding-left:8px;
+    padding-right:8px;
+  }
+
+  body:has(.calendarPanel) .day{
+    padding-left:2px;
+    padding-right:2px;
+  }
+
+  body:has(.calendarPanel) .day .pnl{
+    width:calc(100% + 6px);
+    margin-left:-3px;
+    margin-right:-3px;
+    font-size:8.4px;
+    letter-spacing:-.06em;
+    transform:scaleX(.92);
+  }
+}
